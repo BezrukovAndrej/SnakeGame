@@ -6,9 +6,9 @@ class BoardView: UIView {
     private let originY: CGFloat = 0
     private var cellSide: CGFloat = 0
     
-    var snake: [SnakeCell] = []
-    var addPointCol = 1
-    var addPointRow = 4
+    var snake: SnakeModel?
+    var addPoint: AddPointModel?
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -29,8 +29,8 @@ class BoardView: UIView {
     
     override func draw(_ rect: CGRect) {
         drowGrid()
-        drawSnake()
         drawAddPoint()
+        drawSnake()
     }
     
     private func drowGrid() {
@@ -57,7 +57,7 @@ class BoardView: UIView {
     
     private func drawSnake() {
         
-        guard !snake.isEmpty, let snakeHead = snake.first else { return }
+        guard let snake, !snake.snake.isEmpty, let snakeHead = snake.snake.first else { return }
         
         SnakeColor.snakeHead.setFill()
         UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(snakeHead.col) * cellSide,
@@ -67,8 +67,8 @@ class BoardView: UIView {
                      cornerRadius: 5).fill()
         
         SnakeColor.snakeBody.setFill()
-        for i in 1..<snake.count {
-            let cell = snake[i]
+        for i in 1..<snake.snake.count {
+            let cell = snake.snake[i]
             UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(cell.col) * cellSide,
                                              y: originY + CGFloat(cell.row) * cellSide,
                                              width: cellSide,
@@ -78,9 +78,10 @@ class BoardView: UIView {
     }
     
     private func drawAddPoint() {
+        guard let addPoint else { return }
         SnakeColor.addPoint.setFill()
-        UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(addPointCol) * cellSide,
-                                         y: originY + CGFloat(addPointRow) * cellSide,
+        UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(addPoint.coordinate.col) * cellSide,
+                                         y: originY + CGFloat(addPoint.coordinate.row) * cellSide,
                                          width: cellSide,
                                          height: cellSide),
                      cornerRadius: 5).fill()

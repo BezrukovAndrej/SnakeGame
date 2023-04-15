@@ -17,6 +17,8 @@
 		912CB5C829EB1C67009977E0 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C729EB1C67009977E0 /* Resources.swift */; };
 		912CB5CA29EB1FB1009977E0 /* SnakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C929EB1FB1009977E0 /* SnakeCell.swift */; };
 		912CB5CC29EB26C8009977E0 /* MovingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5CB29EB26C8009977E0 /* MovingModel.swift */; };
+		912CB5CE29EB337F009977E0 /* SnakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5CD29EB337F009977E0 /* SnakeModel.swift */; };
+		912CB5D029EB360C009977E0 /* AddPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5CF29EB360C009977E0 /* AddPointModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		912CB5C729EB1C67009977E0 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		912CB5C929EB1FB1009977E0 /* SnakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeCell.swift; sourceTree = "<group>"; };
 		912CB5CB29EB26C8009977E0 /* MovingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingModel.swift; sourceTree = "<group>"; };
+		912CB5CD29EB337F009977E0 /* SnakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeModel.swift; sourceTree = "<group>"; };
+		912CB5CF29EB360C009977E0 /* AddPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				912CB5C529EB18FF009977E0 /* GameModel.swift */,
 				912CB5C929EB1FB1009977E0 /* SnakeCell.swift */,
 				912CB5CB29EB26C8009977E0 /* MovingModel.swift */,
+				912CB5CD29EB337F009977E0 /* SnakeModel.swift */,
+				912CB5CF29EB360C009977E0 /* AddPointModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,10 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912CB5D029EB360C009977E0 /* AddPointModel.swift in Sources */,
 				912CB5C629EB18FF009977E0 /* GameModel.swift in Sources */,
 				912CB5AF29EB1201009977E0 /* ViewController.swift in Sources */,
 				912CB5C429EB167D009977E0 /* BoardView.swift in Sources */,
 				912CB5C829EB1C67009977E0 /* Resources.swift in Sources */,
+				912CB5CE29EB337F009977E0 /* SnakeModel.swift in Sources */,
 				912CB5AB29EB1201009977E0 /* AppDelegate.swift in Sources */,
 				912CB5CC29EB26C8009977E0 /* MovingModel.swift in Sources */,
 				912CB5CA29EB1FB1009977E0 /* SnakeCell.swift in Sources */,

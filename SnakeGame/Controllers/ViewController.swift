@@ -3,9 +3,12 @@ import UIKit
 class ViewController: UIViewController {
     
     private let boardView = BoardView()
-    private let gameModel = GameModel()
     
-    private var movingDirection: MovingDirection = .left
+    private var gameModel = GameModel()
+    private let snakeModel = SnakeModel()
+    private let addPointModel = AddPointModel()
+    
+    private var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,12 +16,13 @@ class ViewController: UIViewController {
         setupViews()
         setConstraints()
         addSwipe()
-        movingSnake()
+        starTimer()
     }
     
     private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(boardView)
+        gameModel = GameModel(snake: snakeModel, addPoint: addPointModel)
     }
     
     //MARK: - UISwipeGestureRecognizer
@@ -34,39 +38,46 @@ class ViewController: UIViewController {
     
     @objc private func handleSwipe(sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case.left: movingDirection = .left
-        case.right: movingDirection = .right
-        case.up: movingDirection = .up
-        case.down: movingDirection = .down
+        case.left:
+            if snakeModel.movingDirection != .right {
+                snakeModel.movingDirection = .left
+            }
+        case.right:
+            if snakeModel.movingDirection != .left {
+                snakeModel.movingDirection = .right
+            }
+        case.up:
+            if snakeModel.movingDirection != .down {
+                snakeModel.movingDirection = .up
+            }
+        case.down:
+            if snakeModel.movingDirection != .up {
+                snakeModel.movingDirection = .down
+            }
         default:
             break
         }
     }
     
-    //MARK: - Moving Snake
-    
-    private func movingSnake() {
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-            switch self.movingDirection {
-            case .left:
-                self.gameModel.moveLeft()
-            case .right:
-                self.gameModel.moveRight()
-            case .up:
-                self.gameModel.moveUp()
-            case .down:
-                self.gameModel.moveDown()
-            }
-            self.updateUI()
+    private func starTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.3,
+                                     target: self, selector: #selector(timerAction),
+                                     userInfo: nil,
+                                     repeats: true)
+        }
+    @objc private func timerAction() {
+        gameModel.checkEating()
+        snakeModel.moveSnake()
+        if !gameModel.isOnBoard() || !gameModel.crashSnake() {
+            timer.invalidate()
+        } else {
+            updateUI()
         }
     }
     
     private func updateUI() {
-        boardView.snake = gameModel.getSnake()
-        let (col, row) = gameModel.getAddPoint()
-        boardView.addPointCol = col
-        boardView.addPointRow = row
+        boardView.snake = snakeModel
+        boardView.addPoint = addPointModel
         boardView.setNeedsDisplay()
     }
 }
