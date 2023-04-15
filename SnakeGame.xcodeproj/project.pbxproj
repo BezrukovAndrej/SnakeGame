@@ -13,8 +13,10 @@
 		912CB5B429EB1203009977E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912CB5B329EB1203009977E0 /* Assets.xcassets */; };
 		912CB5B729EB1203009977E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912CB5B529EB1203009977E0 /* LaunchScreen.storyboard */; };
 		912CB5C429EB167D009977E0 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C329EB167D009977E0 /* BoardView.swift */; };
-		912CB5C629EB18FF009977E0 /* SnakeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C529EB18FF009977E0 /* SnakeBoard.swift */; };
+		912CB5C629EB18FF009977E0 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C529EB18FF009977E0 /* GameModel.swift */; };
 		912CB5C829EB1C67009977E0 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C729EB1C67009977E0 /* Resources.swift */; };
+		912CB5CA29EB1FB1009977E0 /* SnakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C929EB1FB1009977E0 /* SnakeCell.swift */; };
+		912CB5CC29EB26C8009977E0 /* MovingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5CB29EB26C8009977E0 /* MovingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,10 @@
 		912CB5B629EB1203009977E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		912CB5B829EB1203009977E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		912CB5C329EB167D009977E0 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
-		912CB5C529EB18FF009977E0 /* SnakeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBoard.swift; sourceTree = "<group>"; };
+		912CB5C529EB18FF009977E0 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		912CB5C729EB1C67009977E0 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		912CB5C929EB1FB1009977E0 /* SnakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeCell.swift; sourceTree = "<group>"; };
+		912CB5CB29EB26C8009977E0 /* MovingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 		912CB5C129EB1615009977E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				912CB5C529EB18FF009977E0 /* SnakeBoard.swift */,
+				912CB5C529EB18FF009977E0 /* GameModel.swift */,
+				912CB5C929EB1FB1009977E0 /* SnakeCell.swift */,
+				912CB5CB29EB26C8009977E0 /* MovingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,11 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				912CB5C629EB18FF009977E0 /* SnakeBoard.swift in Sources */,
+				912CB5C629EB18FF009977E0 /* GameModel.swift in Sources */,
 				912CB5AF29EB1201009977E0 /* ViewController.swift in Sources */,
 				912CB5C429EB167D009977E0 /* BoardView.swift in Sources */,
 				912CB5C829EB1C67009977E0 /* Resources.swift in Sources */,
 				912CB5AB29EB1201009977E0 /* AppDelegate.swift in Sources */,
+				912CB5CC29EB26C8009977E0 /* MovingModel.swift in Sources */,
+				912CB5CA29EB1FB1009977E0 /* SnakeCell.swift in Sources */,
 				912CB5AD29EB1201009977E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
