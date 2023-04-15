@@ -10,9 +10,11 @@
 		912CB5AB29EB1201009977E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5AA29EB1201009977E0 /* AppDelegate.swift */; };
 		912CB5AD29EB1201009977E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5AC29EB1201009977E0 /* SceneDelegate.swift */; };
 		912CB5AF29EB1201009977E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5AE29EB1201009977E0 /* ViewController.swift */; };
-		912CB5B229EB1201009977E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912CB5B029EB1201009977E0 /* Main.storyboard */; };
 		912CB5B429EB1203009977E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912CB5B329EB1203009977E0 /* Assets.xcassets */; };
 		912CB5B729EB1203009977E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912CB5B529EB1203009977E0 /* LaunchScreen.storyboard */; };
+		912CB5C429EB167D009977E0 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C329EB167D009977E0 /* BoardView.swift */; };
+		912CB5C629EB18FF009977E0 /* SnakeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C529EB18FF009977E0 /* SnakeBoard.swift */; };
+		912CB5C829EB1C67009977E0 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5C729EB1C67009977E0 /* Resources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +22,12 @@
 		912CB5AA29EB1201009977E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912CB5AC29EB1201009977E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		912CB5AE29EB1201009977E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		912CB5B129EB1201009977E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		912CB5B329EB1203009977E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		912CB5B629EB1203009977E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		912CB5B829EB1203009977E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		912CB5C329EB167D009977E0 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		912CB5C529EB18FF009977E0 /* SnakeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBoard.swift; sourceTree = "<group>"; };
+		912CB5C729EB1C67009977E0 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		912CB5A929EB1201009977E0 /* SnakeGame */ = {
 			isa = PBXGroup;
 			children = (
-				912CB5AA29EB1201009977E0 /* AppDelegate.swift */,
+				912CB5BE29EB14FF009977E0 /* Application */,
+				912CB5C129EB1615009977E0 /* Models */,
+				912CB5C029EB160C009977E0 /* Views */,
+				912CB5C229EB161C009977E0 /* Controllers */,
+				912CB5BF29EB150C009977E0 /* SupportingFiles */,
+			);
+			path = SnakeGame;
+			sourceTree = "<group>";
+		};
+		912CB5BE29EB14FF009977E0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				912CB5AC29EB1201009977E0 /* SceneDelegate.swift */,
-				912CB5AE29EB1201009977E0 /* ViewController.swift */,
-				912CB5B029EB1201009977E0 /* Main.storyboard */,
+				912CB5AA29EB1201009977E0 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		912CB5BF29EB150C009977E0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				912CB5B329EB1203009977E0 /* Assets.xcassets */,
 				912CB5B529EB1203009977E0 /* LaunchScreen.storyboard */,
 				912CB5B829EB1203009977E0 /* Info.plist */,
+				912CB5C729EB1C67009977E0 /* Resources.swift */,
 			);
-			path = SnakeGame;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		912CB5C029EB160C009977E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				912CB5C329EB167D009977E0 /* BoardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		912CB5C129EB1615009977E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				912CB5C529EB18FF009977E0 /* SnakeBoard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		912CB5C229EB161C009977E0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				912CB5AE29EB1201009977E0 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +173,6 @@
 			files = (
 				912CB5B729EB1203009977E0 /* LaunchScreen.storyboard in Resources */,
 				912CB5B429EB1203009977E0 /* Assets.xcassets in Resources */,
-				912CB5B229EB1201009977E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912CB5C629EB18FF009977E0 /* SnakeBoard.swift in Sources */,
 				912CB5AF29EB1201009977E0 /* ViewController.swift in Sources */,
+				912CB5C429EB167D009977E0 /* BoardView.swift in Sources */,
+				912CB5C829EB1C67009977E0 /* Resources.swift in Sources */,
 				912CB5AB29EB1201009977E0 /* AppDelegate.swift in Sources */,
 				912CB5AD29EB1201009977E0 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +195,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		912CB5B029EB1201009977E0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				912CB5B129EB1201009977E0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		912CB5B529EB1203009977E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,12 +329,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VPKL84SZ9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SnakeGame/Info.plist;
+				INFOPLIST_FILE = SnakeGame/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +341,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bezrukov.andrey.SnakeGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +359,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VPKL84SZ9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SnakeGame/Info.plist;
+				INFOPLIST_FILE = SnakeGame/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +371,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bezrukov.andrey.SnakeGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
