@@ -4,7 +4,7 @@ protocol JoysticProtocol: AnyObject {
     func changePointLocation( _ point: CGPoint)
 }
 
-class JoystickView: UIView {
+final class JoystickView: UIView {
     
     weak var joyticDelegate: JoysticProtocol?
     

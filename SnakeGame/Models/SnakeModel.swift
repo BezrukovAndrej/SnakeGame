@@ -1,6 +1,6 @@
 import Foundation
 
-class SnakeModel {
+final class SnakeModel {
     
     private var snakeArray: [SnakeCell]
     

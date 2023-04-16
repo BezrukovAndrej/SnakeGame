@@ -97,10 +97,10 @@
 		912CB5BF29EB150C009977E0 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				912CB5F929EC6BC1009977E0 /* Resources */,
 				912CB5B329EB1203009977E0 /* Assets.xcassets */,
 				912CB5B529EB1203009977E0 /* LaunchScreen.storyboard */,
 				912CB5B829EB1203009977E0 /* Info.plist */,
-				912CB5C729EB1C67009977E0 /* Resources.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -135,6 +135,14 @@
 				912CB5AE29EB1201009977E0 /* MainViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		912CB5F929EC6BC1009977E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				912CB5C729EB1C67009977E0 /* Resources.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

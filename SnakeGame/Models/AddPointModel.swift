@@ -1,6 +1,6 @@
 import Foundation
 
-class AddPointModel {
+final class AddPointModel {
     
     private var col = 1
     private var row = 4

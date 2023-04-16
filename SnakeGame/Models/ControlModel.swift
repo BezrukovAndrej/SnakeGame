@@ -1,6 +1,6 @@
 import Foundation
 
-class ControlModel {
+final class ControlModel {
     
     var direction: MovingDirection = .left
     
