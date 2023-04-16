@@ -22,6 +22,7 @@
 		912CB5D229EBD10C009977E0 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5D129EBD10C009977E0 /* JoystickView.swift */; };
 		912CB5D429EBF09A009977E0 /* ControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5D329EBF09A009977E0 /* ControlModel.swift */; };
 		912CB5D629EBF892009977E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5D529EBF892009977E0 /* MainView.swift */; };
+		912CB5D829EC0BD7009977E0 /* GameTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CB5D729EC0BD7009977E0 /* GameTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		912CB5D129EBD10C009977E0 /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
 		912CB5D329EBF09A009977E0 /* ControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlModel.swift; sourceTree = "<group>"; };
 		912CB5D529EBF892009977E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		912CB5D729EC0BD7009977E0 /* GameTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				912CB5CD29EB337F009977E0 /* SnakeModel.swift */,
 				912CB5CF29EB360C009977E0 /* AddPointModel.swift */,
 				912CB5D329EBF09A009977E0 /* ControlModel.swift */,
+				912CB5D729EC0BD7009977E0 /* GameTimer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				912CB5D029EB360C009977E0 /* AddPointModel.swift in Sources */,
 				912CB5D629EBF892009977E0 /* MainView.swift in Sources */,
 				912CB5D229EBD10C009977E0 /* JoystickView.swift in Sources */,
+				912CB5D829EC0BD7009977E0 /* GameTimer.swift in Sources */,
 				912CB5C629EB18FF009977E0 /* GameModel.swift in Sources */,
 				912CB5D429EBF09A009977E0 /* ControlModel.swift in Sources */,
 				912CB5AF29EB1201009977E0 /* MainViewController.swift in Sources */,

@@ -10,8 +10,7 @@ class MainViewController: UIViewController {
     private let snakeModel = SnakeModel()
     private let addPointModel = AddPointModel()
     private let controlModel = ControlModel()
-    
-    private var timer = Timer()
+    private let gameTimer = GameTimer()
     
     //MARK: - LifeCycle
     
@@ -24,39 +23,42 @@ class MainViewController: UIViewController {
         
         gameModel = GameModel(snake: snakeModel, addPoint: addPointModel)
         setupDelegate()
-        starTimer()
+        gameTimer.startTimer()
     }
     
     private func setupDelegate() {
         mainView.joystickView.joyticDelegate = self
         mainView.boardView.boardDelegare = self
-    }
-    
-    //MARK: - Timer Actions
-    
-    private func starTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.3,
-                                     target: self, selector: #selector(timerAction),
-                                     userInfo: nil,
-                                     repeats: true)
-    }
-    
-    @objc private func timerAction() {
-        gameModel.checkEating()
-        snakeModel.checkDirection(controlModel.direction)
-        snakeModel.moveSnake()
-        if !gameModel.isOnBoard() || !gameModel.crashSnake() {
-            timer.invalidate()
-        } else {
-            updateUI()
-        }
+        gameTimer.timerDelegate = self
+        
     }
     
     private func updateUI() {
         mainView.boardView.snake = snakeModel.snake
         mainView.boardView.addPoint = CGPoint(x: addPointModel.coordinate.col,
                                               y: addPointModel.coordinate.row)
+        mainView.scoreLabel.text = gameModel.gameScore.score
+        mainView.nextLevelLabel.text = gameModel.gameScore.nextLevel
         mainView.boardView.setNeedsDisplay()
+    }
+}
+
+//MARK: - TimerProtocol
+
+extension MainViewController: TimerProtocol {
+    func timerAction() {
+        snakeModel.checkDirection(controlModel.direction)
+        snakeModel.moveSnake()
+        
+        if gameModel.checkNextLevel() {
+            gameTimer.speedIncrease()
+        }
+        
+        if !gameModel.isOnBoard() || !gameModel.crashSnake() {
+            gameTimer.stopTimer()
+        } else {
+            updateUI()
+        }
     }
 }
 

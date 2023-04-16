@@ -4,6 +4,8 @@ class MainView: UIView {
     
     let boardView = BoardView()
     let joystickView = JoystickView()
+    let scoreLabel = UILabel()
+    let nextLevelLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -12,6 +14,8 @@ class MainView: UIView {
         
         configureBoardView()
         configureJoysticView()
+        configureScoreLabel()
+        configurenextLevelLabell()
     }
     
     required init?(coder: NSCoder) {
@@ -24,7 +28,6 @@ class MainView: UIView {
             boardView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             boardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             boardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            boardView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
             boardView.heightAnchor.constraint(equalTo: boardView.widthAnchor, multiplier: 1)
         ])
     }
@@ -36,6 +39,26 @@ class MainView: UIView {
             joystickView.centerXAnchor.constraint(equalTo: centerXAnchor),
             joystickView.heightAnchor.constraint(equalToConstant: 100),
             joystickView.widthAnchor.constraint(equalToConstant: 100)
+        ])
+    }
+    
+    private func configureScoreLabel() {
+        scoreLabel.text = "Score: 0"
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(scoreLabel)
+        NSLayoutConstraint.activate([
+            scoreLabel.topAnchor.constraint(equalTo: boardView.bottomAnchor, constant: 10),
+            scoreLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+        ])
+    }
+    
+    private func configurenextLevelLabell() {
+        nextLevelLabel.text = "Next Lavel: 10"
+        nextLevelLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(nextLevelLabel)
+        NSLayoutConstraint.activate([
+            nextLevelLabel.topAnchor.constraint(equalTo: boardView.bottomAnchor, constant: 10),
+            nextLevelLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
     }
 }

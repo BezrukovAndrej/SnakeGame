@@ -8,6 +8,15 @@ class GameModel {
     private var snake: SnakeModel?
     private var addPoint: AddPointModel?
     
+    private var score = 0
+    private var nextLavel = 5
+    
+    var gameScore: (score: String, nextLevel: String) {
+        let score = "Score: \(score)"
+        let nextLevel = "Next level: \(nextLavel)"
+        return (score, nextLevel)
+    }
+    
     init() {}
     
     init(snake: SnakeModel, addPoint: AddPointModel) {
@@ -31,12 +40,23 @@ class GameModel {
         guard let snake, let addPoint else { return }
         if snake.snake[0].col == addPoint.coordinate.col &&
             snake.snake[0].row == addPoint.coordinate.row {
+            score += 1
+            nextLavel -= 1
             snake.eatAddPoint()
             addPoint.randomizeAddPoint()
             while isOnSnake(col: addPoint.coordinate.col, row: addPoint.coordinate.row) {
                 addPoint.randomizeAddPoint()
             }
         }
+    }
+    
+    func checkNextLevel() -> Bool {
+        checkEating()
+        if nextLavel == 0 {
+            nextLavel = 100
+            return true
+        }
+        return false
     }
     
     func isOnBoard() -> Bool {
