@@ -1,6 +1,6 @@
 import Foundation
 
-class GameModel {
+final class GameModel {
     
     static let cols = 15
     static let rows = 15

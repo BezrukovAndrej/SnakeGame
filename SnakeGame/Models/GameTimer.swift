@@ -4,7 +4,7 @@ protocol TimerProtocol: AnyObject {
     func timerAction()
 }
 
-class GameTimer {
+final class GameTimer {
     
     weak var timerDelegate: TimerProtocol?
     

@@ -1,6 +1,6 @@
 import UIKit
 
-class MainView: UIView {
+final class MainView: UIView {
     
     let boardView = BoardView()
     let joystickView = JoystickView()

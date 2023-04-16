@@ -4,7 +4,7 @@ protocol BoardProtocol: AnyObject {
     func swipeGesture(direction: UISwipeGestureRecognizer.Direction)
 }
 
-class BoardView: UIView {
+final class BoardView: UIView {
     
     weak var boardDelegare: BoardProtocol?
     
