@@ -16,4 +16,3 @@ The game is not over, will be supplemented.
 ## **Used**
 - MVC
 - No storyboard, 100% Programmatic UI
-
